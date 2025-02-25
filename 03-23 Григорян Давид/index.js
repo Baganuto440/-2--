@@ -7,10 +7,11 @@ const changeProposal = (proposals) => {
   
       for (let j = 0; j < word.length; j++) {
         const char = word[j];
-        if (divisibility === 'чётный') {
-          newWord += j % 2 === 1 ? char.toUpperCase() : char;
-        } else if (divisibility === 'нечётный') {
-          newWord += j % 2 === 0 ? char.toUpperCase() : char;
+  
+        if (divisibility === 'нечётный') {
+          newWord += j % 2 === 0 ? char.toUpperCase() : char.toLowerCase();
+        } else if (divisibility === 'чётный') {
+          newWord += j % 2 !== 0 ? char.toUpperCase() : char.toLowerCase();
         }
       }
   
